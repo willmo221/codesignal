@@ -1,16 +1,10 @@
-inputArray = [1,2,3,20,32,44]
+inputArray = [1,2,7,3,9,4,6]
 
 def adjacentElementsProduct(inputArray):
-    max = inputArray[0]
-    highestnumber=0
-    secondnumber=0
-    for i in inputArray:
-        if i > max:
-            highestnumber = i
-    for j in inputArray:
-        if max < j:
-            if j < highestnumber:
-                secondnumber = j
-    print(secondnumber,highestnumber)
+    max = inputArray[0] * inputArray[1]
+    for i in range(len(inputArray) - 1):
+        if inputArray[i] * inputArray[i+1] > max:
+            max = inputArray[i] * inputArray[i+1]
+    print(max)
 
 adjacentElementsProduct(inputArray)
